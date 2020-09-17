@@ -27,6 +27,7 @@ class Airplane {
 // 👇 COMPLETE YOUR WORK BELOW 👇
 */
 
+
 /*
   TASK 1
     - Write a Person class whose constructor initializes `name` and `age` from arguments.
@@ -41,8 +42,35 @@ class Airplane {
 */
 
 class Person {
+  constructor(att){
+    this.name = att.name;
+    this.age = att.age;
+    this.stomach = [];
+  }
+  eat(someFood){
+    if(this.stomach.length < 10  ){
+      this.stomach.push(someFood);
+    }
+  }
 
+  poop(){
+    this.stomach = [];
+  }
+
+  speak(){
+    console.log `${this.name} is ${this.age} years old`;
+  }
 }
+
+const man = new Person({
+  name: 'Brian',
+  age: 39,
+  stomach: [],
+});
+
+console.log(man.eat('pizza'));
+console.log(man.eat('potato'));
+console.log(man.eat('soda'));
 
 /*
   TASK 2
